@@ -1,0 +1,173 @@
+<!-- Part 2: Store Information -->
+ <div class="shop-container">
+
+  <header class="shop-header">
+    <div>
+      <h1>{{name}}</h1>
+      <p>{{Description}}</p>
+    </div>
+
+    <div class="store-info">
+      <span>📍 {{Address}}</span>
+      <span class="status">{{getStoreStatus()}}</span>
+    </div>
+  </header>
+
+</div>
+<section class="featured-section">
+  <div class="featured-content">
+    <span class="featured-label">FEATURED PICK</span>
+
+    <h2>{{ featuredProduct.name }}</h2>
+    <p>{{ featuredProduct.description }}</p>
+
+    <div class="price-row">
+      <del>{{ featuredProduct.price }} {{ currency }}</del>
+      <strong>{{ getDiscountedPrice() }} {{ currency }}</strong>
+    </div>
+
+    <span class="discount-tag">
+      {{ discountPercentage }}% OFF
+    </span>
+  </div>
+
+  <div class="featured-visual">
+    <span>💻</span>
+  </div>
+</section>
+
+<section class="products-section">
+
+  <div class="section-heading">
+    <div>
+      <span class="section-label">OUR COLLECTION</span>
+      <h2>Explore Our Products</h2>
+      <p>Discover the tech essentials you'll love.</p>
+    </div>
+  </div>
+
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="product-icon">📱</div>
+      <h3>{{ productNames[1] }}</h3>
+      <p>{{ productPrices[1] }} {{ currency }}</p>
+    </div>
+
+    <div class="product-card">
+      <div class="product-icon">🎧</div>
+      <h3>{{ productNames[2] }}</h3>
+      <p>{{ productPrices[2] }} {{ currency }}</p>
+    </div>
+
+    <div class="product-card">
+      <div class="product-icon">⌚</div>
+      <h3>{{ productNames[3] }}</h3>
+      <p>{{ productPrices[3] }} {{ currency }}</p>
+    </div>
+
+    <div class="product-card">
+      <div class="product-icon">⌨️</div>
+      <h3>{{ productNames[4] }}</h3>
+      <p>{{ productPrices[4] }} {{ currency }}</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="summary-section">
+
+  <div class="section-heading">
+    <span class="section-label">STORE INSIGHTS</span>
+    <h2>Our Store at a Glance</h2>
+    <p>A quick look at our product collection.</p>
+  </div>
+
+  <div class="summary-grid">
+
+    <div class="summary-card">
+      <div class="summary-icon orange">📦</div>
+      <h3>{{ totalProducts }}</h3>
+      <p>Total Products</p>
+    </div>
+
+    <div class="summary-card">
+      <div class="summary-icon blue">📈</div>
+      <h3>{{ mostExpensivePrice }} {{ currency }}</h3>
+      <p>Highest Price</p>
+    </div>
+
+    <div class="summary-card">
+      <div class="summary-icon green">📉</div>
+      <h3>{{ cheapestPrice }} {{ currency }}</h3>
+      <p>Lowest Price</p>
+    </div>
+
+    <div class="summary-card">
+      <div class="summary-icon purple">💰</div>
+      <h3>{{ totalValue }} {{ currency }}</h3>
+      <p>Total Inventory Value</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<h1>{{name}}</h1>
+<p>{{Description}}</p>
+<p>{{Address}}</p>
+<p>{{totalProduct}}</p>
+<p>{{isStoreOpen}}</p>
+<p>{{currency}}</p> -->
+
+<!-- <hr> -->
+
+<!-- Part 3: Product Names -->
+<!-- <h2>Product Names</h2>
+<p>{{productNames[0]}}</p>
+<p>{{productNames[1]}}</p>
+<p>{{productNames[2]}}</p>
+<p>{{productNames[3]}}</p>
+<p>{{productNames[4]}}</p> -->
+
+<!-- Product Prices -->
+<!-- <h2>Product Prices</h2>
+<p>{{productPrices[0]}}</p>
+<p>{{productPrices[1]}}</p>
+<p>{{productPrices[2]}}</p>
+<p>{{productPrices[3]}}</p>
+<p>{{productPrices[4]}}</p> -->
+
+<!-- Featured Product -->
+<!-- <h2>Featured Product</h2>
+<p>{{featuredProduct.name}}</p>
+<p>{{featuredProduct.price}}</p>
+<p>{{featuredProduct.description}}</p>
+
+<h2>{{getStoreStatus()}}</h2> -->
+
+<!-- <p>Original Price: {{featuredProduct.price}} USD</p>
+<p>Discount: {{discountPercentage}}%</p>
+<p>Final Price: {{getDiscountedPrice()}} USD</p>
+
+<h2>Store Summary</h2> -->
+
+<!-- <p>Total Products: {{totalProducts}}</p>
+
+<p>Most Expensive Price: {{mostExpensivePrice}} USD</p>
+
+<p>Cheapest Price: {{cheapestPrice}} USD</p>
+
+<p>Total Value: {{totalValue}} USD</p> -->

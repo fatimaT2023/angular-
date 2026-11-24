@@ -1,0 +1,272 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #f5f7fb;
+  font-family: Arial, sans-serif;
+}
+
+.shop-container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 40px 24px;
+}
+
+.shop-header {
+  background: #101827;
+  color: white;
+  padding: 35px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.shop-header h1 {
+  color: #ff7849;
+  font-size: 34px;
+  margin: 0 0 10px;
+}
+
+.shop-header p {
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.store-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status {
+  background: #166534;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 30px;
+  text-align: center;
+}
+.featured-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 30px;
+  background: white;
+  border-radius: 24px;
+  padding: 45px;
+  margin-top: 30px;
+  box-shadow: 0 12px 35px rgba(16, 24, 39, 0.06);
+}
+
+.featured-label {
+  color: #e66b3d;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.featured-content h2 {
+  font-size: 38px;
+  color: #101827;
+  margin: 16px 0;
+}
+
+.featured-content p {
+  color: #64748b;
+}
+
+.price-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 22px 0;
+}
+
+.price-row del {
+  color: #94a3b8;
+}
+
+.price-row strong {
+  font-size: 28px;
+  color: #101827;
+}
+
+.discount-tag {
+  background: #dcfce7;
+  color: #166534;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.featured-visual {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  background: #f0f3f9;
+  border-radius: 20px;
+}
+
+.featured-visual span {
+  font-size: 110px;
+}
+
+@media (max-width: 700px) {
+  .featured-section {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+}
+
+.products-section {
+  margin-top: 60px;
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+.section-label {
+  color: #ff7849;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  color: #101827;
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.section-heading p {
+  color: #64748b;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #e8edf5;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(16, 24, 39, 0.1);
+}
+
+.product-icon {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f3f9;
+  border-radius: 14px;
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.product-card h3 {
+  color: #101827;
+  margin: 0 0 10px;
+}
+
+.product-card p {
+  color: #ff7849;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.summary-section {
+  margin-top: 65px;
+  margin-bottom: 60px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.summary-card {
+  background: #ffffff;
+  border: 1px solid #e8edf5;
+  border-radius: 20px;
+  padding: 28px 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(16, 24, 39, 0.08);
+}
+
+.summary-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-size: 25px;
+  margin-bottom: 22px;
+}
+
+.orange {
+  background: #fff0e9;
+}
+
+.blue {
+  background: #eaf2ff;
+}
+
+.green {
+  background: #e6f8ed;
+}
+
+.purple {
+  background: #f1eafe;
+}
+
+.summary-card h3 {
+  color: #101827;
+  font-size: 27px;
+  margin: 0 0 10px;
+}
+
+.summary-card p {
+  color: #64748b;
+  font-size: 14px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
