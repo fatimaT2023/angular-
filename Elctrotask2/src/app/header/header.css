@@ -1,0 +1,36 @@
+header {
+  background: linear-gradient(135deg, #1e1e2f, #3a2d6b);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: bold;
+  color: #ffb400;
+  letter-spacing: 2px;
+}
+
+header h1::before {
+  content: "⚡ ";
+}
+
+.welcome {
+  margin: 12px 0 6px;
+  font-size: 20px;
+  color: #e0e0f0;
+}
+
+.slogan {
+  display: inline-block;
+  margin: 10px 0 0;
+  padding: 8px 20px;
+  border: 1px solid #ffb400;
+  border-radius: 20px;
+  font-size: 16px;
+  font-style: italic;
+  color: #ffb400;
+}

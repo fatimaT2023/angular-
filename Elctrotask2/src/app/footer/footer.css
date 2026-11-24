@@ -1,0 +1,45 @@
+.footer {
+  margin-top: 40px;
+  background: linear-gradient(135deg, #1e1e2f, #3a2d6b);
+  color: #e0e0f0;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+.col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.logo {
+  margin: 0 0 10px;
+  font-size: 28px;
+  color: #ffb400;
+}
+
+.col h4 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  color: #ffb400;
+}
+
+.col p {
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+.copyright {
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  font-size: 14px;
+  color: #b8b8d0;
+}

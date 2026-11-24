@@ -1,0 +1,45 @@
+
+<section class="details">
+  <h2 class="title">Product Details</h2>
+
+  <div class="box">
+    <!-- 🖼️ الصورة: Property Binding -->
+    <div class="image-side">
+      <img [src]="productImage" [alt]="productName">
+      <span class="discount-badge">-{{ discountPercentage }}%</span>
+    </div>
+
+    <!-- 📝 المعلومات -->
+    <div class="info-side">
+      <h3>{{ productName }}</h3>
+
+      <p class="status" [class.unavailable]="!isAvailable">
+        {{ isAvailable ? '✔ In Stock' : '✖ Out of Stock' }}
+      </p>
+
+      <p class="desc">{{ productDescription }}</p>
+
+      <!-- 💰 السعر -->
+      <div class="prices">
+        <span class="old-price">{{ productPrice }} JD</span>
+        <span class="new-price">{{ getPriceAfterDiscount() }} JD</span>
+      </div>
+
+      <!-- 🔢 الكمية: Event Binding + Property Binding -->
+      <div class="quantity">
+        <span>Quantity:</span>
+        <button (click)="decreaseQuantity()" [disabled]="quantity === 1">−</button>
+        <span class="qty-number">{{ quantity }}</span>
+        <button (click)="increaseQuantity()">+</button>
+      </div>
+
+      <!-- 🧾 الإجمالي -->
+      <p class="total">Total: <strong>{{ getTotalPrice() }} JD</strong></p>
+
+      <!-- 🛒 زر الإضافة -->
+      <button class="add-btn" [disabled]="!isAvailable" (click)="addToCart()">
+        🛒 Add to Cart
+      </button>
+    </div>
+  </div>
+</section>
