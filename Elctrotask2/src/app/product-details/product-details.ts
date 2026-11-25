@@ -1,39 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter, signal } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-product-details',
-  styleUrl: './product-details.css',
+  imports: [],
   templateUrl: './product-details.html',
+  styleUrl: './product-details.css'
 })
 export class ProductDetails {
-  productName: string = 'Laptop';
-  productDescription: string = 'High-performance laptop with 16GB RAM, 512GB SSD and a 15.6 inch Full HD display. Perfect for work, study and gaming.';
-  productPrice: number = 750;
-  productImage: string = 'https://picsum.photos/seed/laptop/500/350';
-  quantity: number = 1;
-  isAvailable: boolean = true;
-  discountPercentage: number = 10;
+  // 📥 Inputs from App
+  @Input() productName: string = '';
+  @Input() productDescription: string = '';
+  @Input() productPrice: number = 0;
+  @Input() isAvailable: boolean = false;
+  @Input() productImage: string = '';
 
+  // 📤 Output to App
+  @Output() addToCart = new EventEmitter<{ name: string; quantity: number }>();
+
+  discountPercentage: number = 10;
+  quantity = signal(1);
 
   getPriceAfterDiscount(): number {
     return this.productPrice - (this.productPrice * this.discountPercentage / 100);
   }
 
-getTotalPrice(): number {
-    return this.getPriceAfterDiscount() * this.quantity;
+  getTotalPrice(): number {
+    return this.getPriceAfterDiscount() * this.quantity();
   }
-increaseQuantity() {
-    this.quantity++;
+
+  increaseQuantity() {
+    this.quantity.update(q => q + 1);
   }
+
   decreaseQuantity() {
-    if (this.quantity > 1) {
-      this.quantity--;
+    if (this.quantity() > 1) {
+      this.quantity.update(q => q - 1);
     }
   }
 
-  addToCart() {
-    alert(this.quantity + ' x ' + this.productName + ' added to cart! Total: ' + this.getTotalPrice() + ' JD');
+  resetQuantity() {
+    this.quantity.set(1);
+  }
+
+  onAddToCart() {
+    this.addToCart.emit({
+      name: this.productName,
+      quantity: this.quantity()
+    });
   }
 }
-
