@@ -1,0 +1,23 @@
+<app-header />
+<app-navbar />
+<app-product-list />
+
+<div class="switcher">
+  <button (click)="showLaptop()" [class.active]="productName() === 'Laptop'">💻 Laptop</button>
+  <button (click)="showHeadphones()" [class.active]="productName() === 'Wireless Headphones'">🎧 Headphones</button>
+</div>
+
+<app-product-details
+  [productName]="productName()"
+  [productDescription]="productDescription()"
+  [productPrice]="productPrice()"
+  [isAvailable]="isAvailable()"
+  [productImage]="productImage()"
+  (addToCart)="onAddToCart($event)" />
+
+<app-shopping-cart
+  [productName]="cartProductName()"
+  [price]="cartPrice()"
+  [quantity]="cartQuantity()" />
+
+<app-footer />

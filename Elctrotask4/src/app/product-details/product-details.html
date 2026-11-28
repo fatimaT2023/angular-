@@ -1,0 +1,39 @@
+<section class="details">
+  <h2 class="title">Product Details</h2>
+
+  <div class="box">
+    <div class="image-side">
+      <img [src]="productImage" [alt]="productName">
+      <span class="discount-badge">-{{ discountPercentage }}%</span>
+    </div>
+
+    <div class="info-side">
+      <h3>{{ productName }}</h3>
+
+      <p class="status" [class.unavailable]="!isAvailable">
+        {{ isAvailable ? '✔ In Stock' : '✖ Out of Stock' }}
+      </p>
+
+      <p class="desc">{{ productDescription }}</p>
+
+      <div class="prices">
+        <span class="old-price">{{ productPrice }} JD</span>
+        <span class="new-price">{{ getPriceAfterDiscount() }} JD</span>
+      </div>
+
+      <div class="quantity">
+        <span>Quantity:</span>
+        <button (click)="decreaseQuantity()" [disabled]="quantity() === 1">−</button>
+        <span class="qty-number">{{ quantity() }}</span>
+        <button (click)="increaseQuantity()">+</button>
+        <button (click)="resetQuantity()">↺</button>
+      </div>
+
+      <p class="total">Total: <strong>{{ getTotalPrice() }} JD</strong></p>
+
+      <button class="add-btn" [disabled]="!isAvailable" (click)="onAddToCart()">
+        🛒 Add to Cart
+      </button>
+    </div>
+  </div>
+</section>

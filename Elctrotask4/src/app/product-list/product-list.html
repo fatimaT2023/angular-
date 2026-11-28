@@ -1,0 +1,123 @@
+<section class="products">
+  <h2 class="title">Our Products</h2>
+<div class="order-status">
+
+  <h3>Order Status: {{ orderStatus }}</h3>
+
+  @switch (orderStatus) {
+
+    @case ('Pending') {
+      <p>Your order is waiting for confirmation.</p>
+    }
+
+    @case ('Processing') {
+      <p>Your order is being prepared.</p>
+    }
+
+    @case ('Shipped') {
+      <p>Your order has been shipped.</p>
+    }
+
+    @case ('Delivered') {
+      <p>Your order has been delivered.</p>
+    }
+
+    @default {
+      <p>Unknown Order Status.</p>
+    }
+
+  }
+
+</div>
+
+<section class="categories">
+
+  <h2>Product Categories</h2>
+<div class="category-list">
+
+  <button (click)="selectedCategory = 'All Products'">
+    All Products
+  </button>
+
+  <button (click)="selectedCategory = 'Electronics'">
+    Electronics
+  </button>
+
+  <button (click)="selectedCategory = 'Accessories'">
+    Accessories
+  </button>
+
+</div>
+
+  <div class="category-message">
+
+    @if (selectedCategory === 'All Products') {
+      <p>Explore all our products.</p>
+    }
+    @else if (selectedCategory === 'Electronics') {
+      <p>Discover our latest electronic devices.</p>
+    }
+    @else if (selectedCategory === 'Accessories') {
+      <p>Explore our collection of accessories.</p>
+    }
+    @else {
+      <p>Unknown Category.</p>
+    }
+
+  </div>
+
+</section>
+  <div class="grid">
+
+    @for (product of products; track product.id) {
+
+     <div class="card" [ngClass]="{
+  'discount-card': product.discount > 0,
+  'available-card': product.isAvailable,
+  'unavailable-card': !product.isAvailable,
+  'premium-card': product.price > 500
+}"
+[ngStyle]="{
+    'opacity': product.isAvailable ? 1 : 0.5
+}">
+
+        <img [src]="product.image" [alt]="product.name">
+
+        <h3>{{ product.name }}</h3>
+
+        <p class="desc">{{ product.category }}</p>
+
+        <p class="price" [ngStyle]="{
+  'color': product.discount > 0 ? 'red' : 'black',
+  'font-size': product.price > 500 ? '28px' : '18px'
+}">
+  {{ product.price }} JD
+</p>
+
+        @if (product.price > 500) {
+          <p class="premium">Premium Product</p>
+        }
+
+        @if (product.isAvailable) {
+          <p class="status">Available</p>
+        } @else {
+          <p class="status unavailable">Out of Stock</p>
+        }
+
+        @if (product.discount > 0) {
+          <p class="discount">
+            Special Offer - {{ product.discount }}%
+          </p>
+        } @else {
+          <p>No Discount</p>
+        }
+
+        @if (product.isAvailable) {
+          <button>Buy Now</button>
+        }
+
+      </div>
+    }
+
+  </div>
+</section>

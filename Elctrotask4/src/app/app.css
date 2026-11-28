@@ -1,0 +1,23 @@
+.switcher {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.switcher button {
+  padding: 12px 25px;
+  border: 2px solid #3a2d6b;
+  border-radius: 25px;
+  background: white;
+  color: #3a2d6b;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.switcher button.active {
+  background: #3a2d6b;
+  color: white;
+}
